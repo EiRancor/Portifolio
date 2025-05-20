@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, Cambria, Cochin, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #770089;
+  --secondary-color: #38003f;
+  --black: #000000;
+  --dark: #8e8e8e;
+  --white: #ffffff;
+  --vidro: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.particulas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+  background: radial-gradient(
+      circle at 10% 20%,
+      var(--primary-color) 0%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      var(--secondary-color) 0%,
+      transparent 20%
+    ),
+    var(--black);
+}
+
+/* Menu de navegação */
+.navegacao {
+  position: fixed;
+  background: rgba(15, 23, 42, 0.8);
+  width: 100%;
+  z-index: 100;
+  padding: 1.5rem;
+}
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  justify-content: center;
+}
+.Menu_link {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.Menu_link::after {
+  content: "";
+  height: 2px;
+  width: 0%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+
+.Menu_link:hover::after {
+  width: 100%;
+  transition: 0.5s;
+}
+
+/* Cabeçalho principal */
+.cabecalho {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.foto_perfil {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+  border: 4px solid var(--primary-color);
+  animation: flutuar 6s ease-in-out infinite;
+}
+
+.h1 {
+  font-size: 3.5rem;
+  color: var(--white);
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.cabecalho_subtitulo {
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+.sobre {
+  padding: 6rem 2rem;
+}
+
+.sobre_titulo {
+  font-size: 3rem;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sobre_caixa {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 1px solid var(--dark);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sobre_paragrafo {
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* CAIXA DE PROJETOS */
+
+.projetos {
+  padding: 6rem 2rem;
+}
+
+.projeto_titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+.projeto_card:hover {
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+  transform: translateY(-10px) scale(1.03);
+}
+
+.projetos_caixa {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projeto_card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.info_projeto1 {
+  margin-bottom: 5px;
+}
+
+.paragrafo_project1 {
+  color: white;
+  line-height: 1.25rem;
+}
+
+.projeto_imagem {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.caixa_texto_project1 {
+  padding: 1.5rem;
+}
+
+/* CONTATO */
+
+.contato {
+  padding: 6rem 2rem;
+}
+
+.contato_titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.formulario_contato {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+.grupo_form {
+  margin-bottom: 1.5rem;
+}
+.campo_form {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--dark);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+.campo_form:focus {
+  border-color: #ffffff;
+  box-shadow: rgba(255, 255, 255, 0.05);
+}
+
+.botao_form {
+  color: var(--white);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.botao_form:hover {
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px var(--secondary-color);
+}
+
+/* ANIMAÇÃO FOTO DE PERFIL */
+@keyframes flutuar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}

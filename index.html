@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portifólio</title>
+  </head>
+  <body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+      <ul class="menu">
+        <li>
+          <a href="#inicio" class="Menu_link"> inicio </a>
+        </li>
+        <li>
+          <a href="#sobre" class="Menu_link"> sobre </a>
+        </li>
+        <li>
+          <a href="#projetos" class="Menu_link"> projetos </a>
+        </li>
+        <li>
+          <a href="#contato" class="Menu_link"> contato </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+      <img src="img/teto.jpg" alt="Imagem de fundo" class="foto_perfil" />
+      <h1>Emerson Rancor</h1>
+      <!-- SUBSTITUIR SUBTITULO DO CABEÇALHO PELO DEFINITIVO -->
+      <p class="cabecalho_subtitulo">Não sou nada, mas um dia hei de ser!</p>
+    </main>
+    <section id="sobre">
+      <h2 class="sobre_titulo">Sobre mim</h2>
+      <div class="sobre_caixa">
+        <!-- SUBSTITUIR PARAGRAFO DO CABEÇALHO PELO DEFINITIVO -->
+        <p class="sobre_paragrafo">Não há nada, mas um dia haverá.</p>
+      </div>
+    </section>
+    <section id="projetos" class="projetos">
+      <h2 class="projeto_titulo">Meus projetos</h2>
+      <div class="projetos_caixa">
+        <div class="projeto_card">
+          <img src="img/Project1.png" alt="Projeto1" class="projeto_imagem" />
+          <div class="caixa_texto_project1">
+            <h3 class="info_projeto1">Projeto Teto</h3>
+            <!-- SUBSTITUIR PROJETO PELO DEFINITIVO -->
+            <p class="paragrafo_project1">Não há nada, mas um dia haverá</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contato">
+      <h2 class="contato_titulo">Entre em Contato</h2>
+      <form
+        class="formulario_contato"
+        id="formulario"
+        onsubmit="enviar_email(event)"
+      >
+        <div class="grupo_form">
+          <input
+            placeholder="Digite seu nome"
+            class="campo_form"
+            rows="4"
+            id="nome"
+          />
+        </div>
+        <div class="grupo_form">
+          <textarea
+            class="campo_form"
+            placeholder="Digite sua Mensagem"
+            id="mensagem"
+          ></textarea>
+        </div>
+        <button type="submit" class="botao_form">Enviar</button>
+      </form>
+    </section>
+
+    <!-- AREA JAVASCRIPT -->
+    <script>
+      function enviar_email(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById("nome").value;
+        const mensagem = document.getElementById("mensagem").value;
+        // SUBSTITUIR EMAILLL NAO ESQUECER
+        const destinatario = "emerson@rancor.com";
+
+        const assunto = `Mensagem de ${nome}`;
+        const corpo = `Olá! Me chamo ${nome}, ${mensagem}`;
+
+        const url = `mailto:${destinatario}?subject=${encodeURIComponent(
+          assunto
+        )}&body=${encodeURIComponent(corpo)}`;
+        window.open(url, "_blank");
+
+        console.log(url);
+      }
+    </script>
+  </body>
+</html>
